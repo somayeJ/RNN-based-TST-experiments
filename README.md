@@ -1,7 +1,7 @@
 ## About The Repository:
 This repository contains the code and data for the following paper:\
  <a href="https://aclanthology.org/2020.coling-main.197.pdf"> Style versus Content: A distinction without a (learnable) difference? </a> \
-The models introduced in this paper are extensions of the model  <a href="https://github.com/shentianxiao/language-style-transfer"> </a>  introduced by the paper <a href="https://arxiv.org/pdf/1705.09655v2.pdf"> Style Transfer from Non-Parallel Text by Cross-Alignmen </a> 
+The models introduced in this paper are extensions of the  <a href="https://github.com/shentianxiao/language-style-transfer"> model  </a>  introduced by the paper <a href="https://arxiv.org/pdf/1705.09655v2.pdf"> Style Transfer from Non-Parallel Text by Cross-Alignmen </a> 
 
 <!-- GETTING STARTED -->
 ## Getting Started
