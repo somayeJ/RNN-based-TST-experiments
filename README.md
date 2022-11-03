@@ -16,11 +16,12 @@ To get a local copy up of the repository and run the model follow these steps.
 
 #### Installation
 
-1. Clone the repo
+Clone the repo
    ```sh
    git clone https://github.com/somayeJ/RNN-based-TST-experiments.git
    ```
-2. Install the requirements
+<!--*****************************my comments -->
+<!--***************************** 2. Install the requirements?  my comments -->
 <!--*************************1.notes to myself -->
 #### Running the model
 * To run the model, first adjust the following parameters in the of the file  ''options.py''
