@@ -8,11 +8,11 @@ The models introduced in this paper are extensions of the  <a href="https://gith
 
 To get a local copy up of the repository and run the model follow these steps.
 <!--*****************************my comments -->
-#### Requirements 
+<!--***************************** #### Requirements 
 * torchtext >= 0.4.0 ????
 * nltk ??????
 * fasttext == 0.9.3?????
-* kenlm ?????
+* kenlm ?????  my comments -->
 
 #### Installation
 
