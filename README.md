@@ -34,5 +34,5 @@ To get a local copy up of the repository and run the model follow these steps.
 *  Data format: Each file should consist of one sentence per line with tokens separated by a space. The two styles are represented by 0 and 1
 
 ## Dependencies
-* pytorch = 
-* Python = 
+* TensorFlow 1.3.0 
+* Python >= 2.7 
