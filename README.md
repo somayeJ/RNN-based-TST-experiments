@@ -23,8 +23,8 @@ Clone the repo
 <!--*****************************my comments -->
 <!--***************************** 2. Install the requirements?  my comments -->
 <!--*************************1.notes to myself -->
-#### Running the model
-* To run the model, first adjust the following parameters in the of the file  ''options.py''
+#### Running the TST models
+* To run the models, first adjust the parameters in the function of "load_arguments()" of the file "model.py"
 
 * Then run the following command:
    ```sh
