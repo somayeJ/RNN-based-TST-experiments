@@ -23,13 +23,16 @@ Clone the repo
 <!--*****************************my comments -->
 <!--***************************** 2. Install the requirements?  my comments -->
 <!--*************************1.notes to myself -->
-#### Running the TST models
+### Running the codes
+####  TST models
 * To run the models, first adjust the parameters in the function of "load_arguments()" of the file "model.py"
 
 * Then run the following command:
    ```sh
    python model.py
    ```
+####  Evaluation
+* To compute Content Preservatiob Power (CPP) using embedding_based techniques, download and put the  glove embeddings in codes/evaluation/embedding_based/
 ## Data 
 * The data/Yelp/ directory contains the  Yelp restaurant reviews dataset used in the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
 *  Data format: Each file should consist of one sentence per line with tokens separated by a space. The two styles are represented by 0 and 1
