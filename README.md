@@ -32,8 +32,8 @@ Clone the repo
    python model.py
    ```
 ####  Evaluation
-* <b>Content Preservatiob Power (CPP)> </b>:   
- ** download and put the  glove embeddings in codes/evaluation/embedding_based/
+* <b>Content Preservatiob Power (CPP) </b>:   
+      * download and put the  glove embeddings in codes/evaluation/embedding_based/
  ** download and put the  glove embeddings in codes/evaluation/embedding_based/
 ## Data 
 * The data/Yelp/ directory contains the  Yelp restaurant reviews dataset used in the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
