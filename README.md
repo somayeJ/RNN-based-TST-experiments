@@ -32,13 +32,13 @@ Clone the repo
    python model.py
    ```
 ####  Evaluation
-* <b>Content Preservatiob Power (CPP) </b>:   
+* Content Preservatiob Power (CPP) :   
     * Download  the  glove embeddings (put it in codes/evaluation/embedding_based/)
     * Adjust the parameters in the function of "load_arguments()" of the code
     * Run the code
-* <b>Style Shift Power </b>: 
+* Style Shift Power: 
     * Adjust the parameters in the function of "load_arguments()" of the code
-*<b> Fluency</b>:
+* Fluency: 
     * Adjust the parameters in the function of "load_arguments()" of the code
      
 ## Data 
