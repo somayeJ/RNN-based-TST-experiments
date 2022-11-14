@@ -33,10 +33,14 @@ Clone the repo
    ```
 ####  Evaluation
 * <b>Content Preservatiob Power (CPP) </b>:   
-    * Nested bullet
-* 
-      * download and put the  glove embeddings in codes/evaluation/embedding_based/
- ** download and put the  glove embeddings in codes/evaluation/embedding_based/
+    * Download  the  glove embeddings (put it in codes/evaluation/embedding_based/)
+    * Adjust the parameters in the function of "load_arguments()" of the code
+    * Run the code
+* <b>Style Shift Power </b>: 
+    * Adjust the parameters in the function of "load_arguments()" of the code
+*<b> Fluency</b>:
+    * Adjust the parameters in the function of "load_arguments()" of the code
+     
 ## Data 
 * The data/Yelp/ directory contains the  Yelp restaurant reviews dataset used in the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
 *  Data format: Each file should consist of one sentence per line with tokens separated by a space. The two styles are represented by 0 and 1
