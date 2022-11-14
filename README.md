@@ -32,15 +32,10 @@ Clone the repo
    python model.py
    ```
 ####  Evaluation
-* Content Preservatiob Power (CPP) :   
-    * Download  the  glove embeddings (put it in codes/evaluation/embedding_based/)
-    * Adjust the parameters in the function of "load_arguments()" of the code
-    * Run the code
-* Style Shift Power: 
-    * Adjust the parameters in the function of "load_arguments()" of the code
-* Fluency: 
-    * Adjust the parameters in the function of "load_arguments()" of the code
-     
+* Download  the  glove embeddings (put it in codes/evaluation/content_preservation_power/embedding_based/)
+* Adjust the parameters in the function of "load_arguments()" of the code
+* Run the code
+
 ## Data 
 * The data/Yelp/ directory contains the  Yelp restaurant reviews dataset used in the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
 *  Data format: Each file should consist of one sentence per line with tokens separated by a space. The two styles are represented by 0 and 1
