@@ -32,7 +32,7 @@ Clone the repo
    python model.py
    ```
 ####  Evaluation
-* <b>Content Preservatiob Power (CPP)> :   
+* <b>Content Preservatiob Power (CPP)> </b>:   
  ** download and put the  glove embeddings in codes/evaluation/embedding_based/
  ** download and put the  glove embeddings in codes/evaluation/embedding_based/
 ## Data 
