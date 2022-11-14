@@ -32,6 +32,8 @@ Clone the repo
    python model.py
    ```
 ####  Evaluation
+* Bullet list
+    * Nested bullet
 * <b>Content Preservatiob Power (CPP) </b>:   
       * download and put the  glove embeddings in codes/evaluation/embedding_based/
  ** download and put the  glove embeddings in codes/evaluation/embedding_based/
