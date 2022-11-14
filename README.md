@@ -32,7 +32,9 @@ Clone the repo
    python model.py
    ```
 ####  Evaluation
-* To compute Content Preservatiob Power (CPP) using embedding_based techniques, download and put the  glove embeddings in codes/evaluation/embedding_based/
+* <b>Content Preservatiob Power (CPP)> :   
+ ** download and put the  glove embeddings in codes/evaluation/embedding_based/
+ ** download and put the  glove embeddings in codes/evaluation/embedding_based/
 ## Data 
 * The data/Yelp/ directory contains the  Yelp restaurant reviews dataset used in the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
 *  Data format: Each file should consist of one sentence per line with tokens separated by a space. The two styles are represented by 0 and 1
