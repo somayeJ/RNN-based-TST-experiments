@@ -36,13 +36,12 @@ Clone the repo
     * Download  the  glove embeddings (put it in codes/evaluation/content_preservation_power/embedding_based/)
     * Adjust the parameters in the function of "load_arguments()" of the code
 * Style Shift Power (SSP)
- Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-    * Train the classifier on the gold data  or test the SSP of the model outputs by first * Then run the following command:
+    * Train the classifier on the gold data  or test the SSP of the model outputs by:
+    * First djusting the parameters in the function of "load_arguments()" of the code
+    * Then running the following command:
    ```sh
    python model.py
-   ```djust the parameters in the function of "load_arguments()" of the code and 
+   ``` and 
     * Adjust the parameters in the function of "load_arguments()" of the code and train the classifier on the gold data
 * Fluency
     * Nested bullet
