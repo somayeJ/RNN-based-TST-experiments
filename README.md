@@ -37,14 +37,18 @@ Clone the repo
     * Adjust the parameters in the function of "load_arguments()" of the code
 * Style Shift Power (SSP)
     * Train the classifier on the gold data  or test the SSP of the model outputs by:
-    * First djusting the parameters in the function of "load_arguments()" of the code
+    * Adjusting the parameters in the function of "load_arguments()" of the code
     * Then running the following command:
    ```sh
    python classifier.py
    ```
 * Fluency
-    * Nested bullet
-
+    * Train the language model on the gold data  or test the fluency of the model outputs by:
+    * Adjusting the parameters in the function of "load_arguments()" of the code
+    * Then running the following command:
+   ```sh
+   python language_model.py
+   ```
 ## Data 
 * The data/Yelp/ directory contains the  Yelp restaurant reviews dataset used in the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
 *  Data format: Each file should consist of one sentence per line with tokens separated by a space. The two styles are represented by 0 and 1
