@@ -40,9 +40,8 @@ Clone the repo
     * First djusting the parameters in the function of "load_arguments()" of the code
     * Then running the following command:
    ```sh
-   python model.py
-   ``` and 
-    * Adjust the parameters in the function of "load_arguments()" of the code and train the classifier on the gold data
+   python classifier.py
+   ```
 * Fluency
     * Nested bullet
 
