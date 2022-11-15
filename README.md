@@ -32,9 +32,20 @@ Clone the repo
    python model.py
    ```
 ####  Evaluation
-* Download  the  glove embeddings (put it in codes/evaluation/content_preservation_power/embedding_based/)
-* Adjust the parameters in the function of "load_arguments()" of the code
-* Run the code
+* Content Preservation Power
+    * Download  the  glove embeddings (put it in codes/evaluation/content_preservation_power/embedding_based/)
+    * Adjust the parameters in the function of "load_arguments()" of the code
+* Style Shift Power (SSP)
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+    * Train the classifier on the gold data  or test the SSP of the model outputs by first * Then run the following command:
+   ```sh
+   python model.py
+   ```djust the parameters in the function of "load_arguments()" of the code and 
+    * Adjust the parameters in the function of "load_arguments()" of the code and train the classifier on the gold data
+* Fluency
+    * Nested bullet
 
 ## Data 
 * The data/Yelp/ directory contains the  Yelp restaurant reviews dataset used in the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
