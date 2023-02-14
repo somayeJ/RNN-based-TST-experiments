@@ -1,4 +1,3 @@
-#
 import os
 import sys
 import argparse
@@ -13,13 +12,9 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 def load_arguments():
     argparser = argparse.ArgumentParser(sys.argv[0])
-
-    argparser.add_argument('--model_type',
+    argparser.add_argument('--generation_mode',
             type=str,
-            default='')
-    argparser.add_argument('--mode',
-            type=str,
-            default='')
+            default='') # '.tsf' or '.rec' or ''
     argparser.add_argument('--train',
             type=str,
             default='')
@@ -32,9 +27,6 @@ def load_arguments():
     argparser.add_argument('--online_testing',
             type=bool,
             default=False)
-    argparser.add_argument('--output',
-            type=str,
-            default='')
     argparser.add_argument('--vocab',
             type=str,
             default='')
@@ -47,7 +39,6 @@ def load_arguments():
     argparser.add_argument('--load_model',
             type=bool,
             default=False)
-
     argparser.add_argument('--batch_size',
             type=int,
             default=64)
@@ -57,25 +48,15 @@ def load_arguments():
     argparser.add_argument('--steps_per_checkpoint',
             type=int,
             default=1000)
-    argparser.add_argument('--max_seq_length',
-            type=int,
-            default=20)
     argparser.add_argument('--max_train_size',
             type=int,
             default=-1)
-
-    argparser.add_argument('--beam',
-            type=int,
-            default=1)
     argparser.add_argument('--dropout_keep_prob',
             type=float,
             default=0.5)
     argparser.add_argument('--n_layers',
             type=int,
             default=1)
-    argparser.add_argument('--dim_y',
-            type=int,
-            default=200)
     argparser.add_argument('--dim_z',
             type=int,
             default=500)
@@ -85,27 +66,9 @@ def load_arguments():
     argparser.add_argument('--learning_rate',
             type=float,
             default=0.0005)
-    argparser.add_argument('--gamma_init',         
-            type=float,
-            default=0.1)
-    argparser.add_argument('--gamma_decay',
-            type=float,
-            default=1)
-    argparser.add_argument('--gamma_min',
-            type=float,
-            default=0.1)
-    argparser.add_argument('--filter_sizes',
-            type=str,
-            default='1,2,3,4,5')
-    argparser.add_argument('--n_filters',
-            type=int,
-            default=128)
     argparser.add_argument('--shuffle_sentences',
         type=bool,
-        default=False) # for claculating lower_bound
-    argparser.add_argument('--higher_bound',
-        type = bool,
-        default=False) # for calculating higher bound
+        default=False) # True if calculating lower_bound of fluency
 
     args = argparser.parse_args()
 
@@ -141,19 +104,6 @@ def load_sent_shuffle(path, max_size=-1):
         
     return data
 
-def write_easy_sentences(path):
-    with open(path+'.0' ) as f, open(path+'.0.'+"easy", 'w') as f2:
-        len_data= len(f.readlines())
-        for i in range(len_data):
-            f2.write("breakfast was pathetic .")
-            f2.write('\n')
-    with open(path+'.1') as g, open(path+'.1.'+"easy", 'w') as g2:
-        lens = len(g.readlines())
-        print(lens)
-        for i in range(lens):
-            g2.write("the staff is friendl")
-            g2.write('\n')
-    return
 
 def create_cell(dim, n_layers, dropout):
     cell = tf.nn.rnn_cell.GRUCell(dim, reuse=tf.AUTO_REUSE )
@@ -286,16 +236,12 @@ def evaluate(sess, args, vocab, model, x):
 
 if __name__ == '__main__':
     args = load_arguments()
-    suffix= args.mode # bara moghei ke file haye generated ro behesh midim bayad suffix tsf bashe vagarna hichi
+    suffix= args.generation_mode # bara moghei ke file haye generated ro behesh midim bayad suffix tsf bashe vagarna hichi
     if args.train:
-        if args.model_type == 'transformer':
-            train0 = load_sent(args.train + 'train.' + suffix  + '.0' + '.txt') # data0 aval - boode , tu style transfer files yani .tsf files + hast
-            train1 = load_sent(args.train+ 'train.' + suffix  + '.1' + '.txt')
-        elif args.model_type == 'seq2seq':
-            train0 = load_sent(args.train+ 'sentiment.train.0.' + suffix)
-            train1 = load_sent(args.train + 'sentiment.train.1.' + suffix)
-
+        train0 = load_sent(args.train + '.0' + suffix)
+        train1 = load_sent(args.train + '.1' + suffix)
         train = train0 + train1
+
         if not os.path.isfile(args.vocab):
             build_vocab(train, args.vocab)
 
@@ -303,29 +249,17 @@ if __name__ == '__main__':
     print('vocabulary size', vocab.size)
 
     if args.dev:
-        if args.model_type == 'transformer':
-            dev0 = load_sent(args.dev + 'dev.' + suffix  + '.0' + '.txt') # data0 aval - boode , tu style transfer files yani .tsf files + hast
-            dev1 = load_sent(args.dev+ 'dev.' + suffix  + '.1' + '.txt')
-        elif args.model_type == 'seq2seq':
-            dev0 = load_sent(args.dev + 'sentiment.dev.0' + suffix)
-            dev1 = load_sent(args.dev + 'sentiment.dev.1' + suffix)
+        dev0 = load_sent(args.dev + '.0' + suffix)
+        dev1 = load_sent(args.dev + '.1' + suffix)
         dev = dev0 + dev1
 
     if args.test:
-        if  args.shuffle_sentences: 
+        if  args.shuffle_sentences: # to compute lower bound of fluency
             test0 = load_sent_shuffle(args.test +'.0' + suffix)
             test1 = load_sent_shuffle(args.test +'.1' + suffix)
-        elif args.higher_bound: # where sentences are very good in terms of fluency
-            write_easy_sentences(args.test )
-            test0 = load_sent(args.test+'.0.'+'easy')
-            test1 = load_sent(args.test+'.1.'+'easy')
         else:
-            if args.model_type == 'transformer':
-                test0 = load_sent(args.test + 'test.' + suffix  + '.0' + '.txt') # data0 aval - boode , tu style transfer files yani .tsf files + hast
-                test1 = load_sent(args.test + 'test.' + suffix  + '.1' + '.txt')
-            elif args.model_type == 'seq2seq':
-                test0 = load_sent(args.test + 'sentiment.test.0.' + suffix)
-                test1 = load_sent(args.test + 'sentiment.test.1.' + suffix)
+            test0 = load_sent(args.test + '.0' + suffix)
+            test1 = load_sent(args.test + '.1' + suffix)
         test = test0 + test1
 
     config = tf.ConfigProto()
