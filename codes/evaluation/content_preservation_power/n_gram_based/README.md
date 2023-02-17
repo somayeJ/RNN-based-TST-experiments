@@ -1,5 +1,5 @@
 #### About this code:
-This code computes CPP sing n-gram based techniques  by following the same strategy proposed by the paper  <a href="https://www.aclweb.org/anthology/P19-1041/">《Disentangled Representation Learning for Non-Parallel Text Style Transfer》</a>. 
+This code computes CPP using n-gram based techniques  by following the same strategy proposed by the paper  <a href="https://www.aclweb.org/anthology/P19-1041/">《Disentangled Representation Learning for Non-Parallel Text Style Transfer》</a>. 
 
 <!-- GETTING STARTED ## Getting Started-->
 
