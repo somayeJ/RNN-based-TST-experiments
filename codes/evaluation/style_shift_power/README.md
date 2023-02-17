@@ -1,5 +1,5 @@
 #### About this code:
-This code computes style_shift_power (SSP) and  is adapted from the code released by the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignmen》</a>. 
+This code computes style_shift_power (SSP) and  is adapted from the code released by the paper <a href="https://arxiv.org/abs/1705.09655">《Style Transfer from Non-Parallel Text by Cross-Alignment》</a>. 
 
 <!-- GETTING STARTED ## Getting Started-->
 
@@ -12,7 +12,7 @@ This code computes style_shift_power (SSP) and  is adapted from the code release
    * --test = ../../data/Yelp_small/sentiment.test 
    * --vocab = ./yelp.vocab 
    * --model = ./model 
-   * --generation_mode = '' (suffix of the file)
+   * --generation_mode = " " (suffix of the file)
    
 * To test the model, first adjust the following parameters in the function load_arguments() of the file  ''SSP_classifier.py'':
    * --test = ../../data/Yelp_small/sentiment.test 
