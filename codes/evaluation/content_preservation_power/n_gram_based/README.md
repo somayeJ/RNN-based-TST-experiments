@@ -7,7 +7,7 @@ This code computes CPP using n-gram based techniques  by following the same stra
 
 #### Running the code
 * First adjust the parameters in the function load_arguments() of the file  ''word_overlap.py'':
-   * --source_file_path = ../data/Yelp/sentiment.test. 
+   * --source_file_path = ../data/Yelp/sentiment.test
    * --generated_file_path = ../outputs/sentiment.test
    * --scores_output_file = ../outputs/ngram_scores 
    * --source_suffix = '' (suffix of the source file)
