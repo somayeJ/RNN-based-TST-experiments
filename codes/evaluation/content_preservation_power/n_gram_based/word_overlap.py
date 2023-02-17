@@ -1,4 +1,3 @@
-# author Somaye, 2020 Oct
 import sys
 import argparse
 import pprint
